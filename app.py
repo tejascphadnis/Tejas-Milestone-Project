@@ -44,7 +44,7 @@ def build_graph(ticker, option, date):
     if date == 'days30':
         toDate = datetime.date.today()
         fromDate = toDate - datetime.timedelta(days=30)
-        t_date = "last 30 days"
+        t_date = "past 30 days"
 # Previous Month
     if date == 'pmonth':
         first = datetime.date.today().replace(day=1)
