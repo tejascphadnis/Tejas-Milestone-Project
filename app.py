@@ -44,11 +44,13 @@ def build_graph(ticker, option, date):
     if date == 'days30':
         toDate = datetime.date.today()
         fromDate = toDate - datetime.timedelta(days=30)
+        t_date = "last 30 days"
 # Previous Month
     if date == 'pmonth':
         first = datetime.date.today().replace(day=1)
         toDate = first - datetime.timedelta(days=1)
         fromDate = toDate.replace(day=1)
+        t_date = "past month"
 
 # Option selection
     if len(option) == 2:
@@ -79,7 +81,7 @@ def build_graph(ticker, option, date):
     p.xaxis.axis_label_text_color = "blue"
     p.yaxis.axis_label = "Price"
     p.yaxis.axis_label_text_color = "blue" 
-    p.title = ticker + choice + "prices for" + date
+    p.title = "Stock - " + ticker + ": " + choice + " prices for " + t_date
 #    p.title = "Stock Prices for: " + ticker
 #    p.title.text_color = "#4169e1"  
 #    p.title.text_font_size = '18pt'
