@@ -80,7 +80,7 @@ def build_graph(ticker, option, date):
     p.yaxis.axis_label = "Price"
     p.yaxis.axis_label_text_color = "blue" 
     p.title = "Stock Prices for: " + ticker
-    p.title.text_color = "#4169e1"  
+#    p.title.text_color = "#4169e1"  
     p.title.text_font_size = '18pt'
 
 # based on option build graph
