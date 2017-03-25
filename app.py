@@ -6,9 +6,13 @@ from flask import Flask, render_template, request, redirect
 from bokeh.plotting import figure, output_notebook, show
 from bokeh.embed import components
 from bokeh.resources import CDN
+import sys
+import logging
 
 
 app = Flask(__name__)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 
 @app.route('/')
